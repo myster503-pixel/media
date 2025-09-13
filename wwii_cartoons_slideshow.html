@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Persuasion: WWII Propaganda in American Cartoons</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
+    section { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 2rem; }
+    h1, h2 { margin: 0.5rem 0; }
+    p { max-width: 800px; text-align: center; }
+    iframe, img { max-width: 80%; height: auto; margin-top: 1rem; border: 3px solid #fff; }
+    .slide { display: none; }
+    .active { display: flex; }
+    button { position: fixed; bottom: 20px; background: #fff; color: #111; border: none; padding: 10px 20px; cursor: pointer; margin: 0 5px; font-size: 1rem; border-radius: 5px; }
+    .controls { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); }
+    .video{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  figure{margin:1rem auto;text-align:center}
+  figcaption{font-size:.9rem;opacity:.8;margin-top:.5rem}
+</style>
+</head>
+<body>
+  <section class="slide active">
+    <h1>Animated Persuasion</h1>
+    <h2>WWII Propaganda in American Cartoons</h2>
+    <p>How beloved animated shorts entertained families while delivering powerful wartime messages.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Any Bonds Today? (1942)</h2>
+    <p>Bugs Bunny, Porky Pig, and Elmer Fudd sing directly to audiences urging them to buy war bonds. Patriotic music and flag imagery create a lively, participatory call to action.</p>
+    <figure>
+      <div class="video">
+        <iframe loading="lazy" src="https://archive.org/embed/AnyBondsToday" title="Any Bonds Today? (Archive.org embed)" allowfullscreen></iframe>
+      </div>
+      <figcaption>Watch the public‑domain short via Internet Archive. <a href="https://archive.org/details/AnyBondsToday" target="_blank">Open in new tab</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Der Fuehrer’s Face (1943)</h2>
+    <p>Donald Duck endures a nightmare factory shift in Nazi Germany. Satire, frantic music, and expressionist animation ridicule fascism and boost U.S. morale.</p>
+    <figure>
+      <div class="video">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/I7vb89c6pQY" title="Der Fuehrer's Face (YouTube embed)" allowfullscreen></iframe>
+      </div>
+      <figcaption>Disney wartime short (for analysis/education). <a href="https://www.youtube.com/watch?v=I7vb89c6pQY" target="_blank">Open on YouTube</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>The Yankee Doodle Mouse (1943)</h2>
+    <p>Tom & Jerry wage a basement "war," turning household items into bombs and grenades. Patriotic cues and slapstick violence present war as humorous and inevitable.</p>
+    <figure>
+      <div class="video">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/fCEkBgeCSwg" title="The Yankee Doodle Mouse (YouTube embed)" allowfullscreen></iframe>
+      </div>
+      <figcaption>Tom & Jerry theatrical short (analysis use). <a href="https://www.youtube.com/watch?v=fCEkBgeCSwg" target="_blank">Open on YouTube</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Bugs Bunny: Super-Rabbit (1943)</h2>
+    <p>Parodying superhero tropes, Bugs ends the cartoon by joining the U.S. Marines—a cheeky yet clear recruitment message wrapped in comedy.</p>
+    <figure>
+      <div class="video">
+        <iframe loading="lazy" src="https://archive.org/embed/super-rabbit-1943-restored" title="Super-Rabbit (Archive.org embed)" allowfullscreen></iframe>
+      </div>
+      <figcaption>Restored print via Internet Archive. <a href="https://archive.org/details/super-rabbit-1943-restored" target="_blank">Open in new tab</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Analysis & Themes</h2>
+    <p>All four cartoons demonstrate <strong>soft power</strong>: influencing audiences through humor and culture rather than force.<br>They use framing, cultivation theory, and classic animation codes to normalize patriotism and participation in the war effort.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/WWII_war_bonds_poster.jpg" alt="WWII War Bonds Poster" />
+  </section>
+
+  <section class="slide">
+    <h2>Reflection</h2>
+    <p>These shorts blurred entertainment and propaganda for adults and children alike. Do we view them differently today, knowing their original intent?</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Looney_Tunes_logo_1940s.png" alt="Looney Tunes Logo" />
+  </section>
+
+  <div class="controls">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    function showSlide(index) {
+      slides[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
